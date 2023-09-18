@@ -4,10 +4,17 @@ class UsersController < ApplicationController
 
   def show
     
-    @user = User.new
+    @book = Book.new
+    
+    # @book = Book.new
     
   end
-
+  
+  def cleate
+  
+    
+  
+  end
   def index
   end
 end
