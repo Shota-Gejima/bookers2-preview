@@ -2,11 +2,11 @@
 
 <div>
     
-  <%= image_tag @book.user.get_profile_image(100,100) %>
+  <%= image_tag @user.get_profile_image(100,100) %>
   
-  <%= @book.user.name %>
+  <%= @user.name %>
   
-  <%= @book.user.introduction %>
+  <%= @user.introduction %>
   
   <%= link_to "edit", edit_user_path(current_user.id) %>
   
@@ -61,7 +61,7 @@
           
         <% end %></td>
   
-        <td><%= link_to book.title, book_path(book.id) %></td>
+        <td><%= link_to book.title, book_path(book.id) %></td>rails 
   
         <td><%= book.body %></td>
     
