@@ -1,33 +1,20 @@
-<h1>User info</h1>
-
-<div>
-    
-  <%= image_tag @book.user.get_profile_image(100,100) %>
-  
-  <table>
-    
-    <tr>
-      <th>name</th>
-      <th><% @book.user.name %></th>
-    </tr>
-    
-    
-    
-  </table>
-
-  <p><% @book.user.name %></p>
-  
-</div>
+<%= render 'list', user: @user, books: @books %>
 
 <h1>Book detail</h1>
 
 <div>
+  
+  <%= link_to user_path(@book.id) do %>
+        
+    <%= image_tag @book.user.get_profile_image(100,100) %></br>
+          
+  <% end %>
+  
+  <%= link_to @user.name, user_path(@book.user) %>
     
-<%= image_tag @book.user.get_profile_image(100,100) %>
+  <%= link_to @book.title, book_path(@book) %>
   
-  <p><%= @book.title %></p>
-  
-  <p><%= @book.body %></p>
+  <%= @book.body %>
   
   <% if @book.user == current_user %>
   
