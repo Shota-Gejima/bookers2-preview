@@ -1,6 +1,4 @@
 <h1>User info</h1>
-
-<div>
     
   <%= image_tag user.get_profile_image(100,100) %>
   
@@ -20,17 +18,18 @@
   
   </table>
   
-  <% if user.id == current_user.id %>
+
+    
+    
+    <%= link_to(edit_user_path(current_user.id), class: "text-light") do %>
+ <i class="fa-solid fa-user-gear"></i>
+    
+    <% end %>
   
-    <%= link_to "edit", edit_user_path(current_user.id) %>
   
-  <% else %>
-  
-    <%= link_to "edit", user_path(current_user.id) %>
-  
-  <% end %>
-  
-</div>
+
+
+
 
 <h1>New book</h1>
 
@@ -43,8 +42,11 @@
   <h4>Opinion</h4>
   
   <%= f.text_area :body %><br>
-  
-  <%= f.submit 'Create Book' %>
-  
+
+  <button type="submit" class="btn btn-success">Create Book</button>
+
 <% end %>
+
+
+
 
